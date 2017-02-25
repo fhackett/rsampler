@@ -1,5 +1,5 @@
 with import <nixpkgs> {};
-  clangStdenv.mkDerivation{
+  stdenv.mkDerivation{
     name = "rsamplerEnv";
-    buildInputs = [ cmake libjack2 gdb libsamplerate libsndfile valgrind doxygen ];
+    buildInputs = [ cmake libjack2 gdb libsamplerate libsndfile valgrind doxygen armadillo gcc6 ];
   }

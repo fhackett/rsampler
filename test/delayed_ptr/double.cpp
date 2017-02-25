@@ -1,9 +1,9 @@
 #include <iostream>
 #include <future>
 
-#include <delayed_ptr.hpp>
+#include <rsampler/delayed_ptr.hpp>
 
-using namespace delayed;
+using namespace rsampler::delayed;
 
 struct on_delete{
     std::shared_ptr<int> ptr;
@@ -19,7 +19,6 @@ int main(){
     std::promise<int> p1;
     {
         auto ptr = make_delayed<on_delete>([&](){
-            std::cout << "destruct\n";
             p1.set_value(1);
         });
     }
